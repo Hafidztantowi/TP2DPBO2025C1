@@ -1,0 +1,141 @@
+TP2DPBO2025C1
+Saya Hafidz Tantowi dengan NIM 2308817 mengerjakan soal TP 2 dalam mata kuliah 
+Desain dan Pemrograman Berorientasi Objek untuk keberkahanNya maka saya tidak melakukan 
+kecurangan seperti yang telah dispesifikasikan. Aamiin.
+
+(Due to technical issues, the search service is temporarily unavailable.)
+
+Berikut adalah **Desain Program** dan **Alur Program** untuk aplikasi berbasis OOP dengan konsep multi-level inheritance yang telah kita bahas sebelumnya. Desain dan alur ini akan membantu Anda memahami struktur dan cara kerja program secara keseluruhan.
+
+---
+
+## **Desain Program**
+
+### **Struktur Class**
+Program ini terdiri dari tiga class dengan hubungan **multi-level inheritance**:
+
+1. **Class `PetShop`**:
+   - **Atribut**:
+     - `id` (int): ID produk.
+     - `nama_produk` (string): Nama produk.
+     - `harga_produk` (double): Harga produk.
+     - `stok_produk` (int): Stok produk.
+     - `foto_produk` (string): Path atau URL foto produk.
+   - **Method**:
+     - `display()`: Menampilkan informasi dasar produk.
+
+2. **Class `Aksesoris` (Turunan dari `PetShop`)**:
+   - **Atribut Tambahan**:
+     - `jenis` (string): Jenis aksesoris.
+     - `bahan` (string): Bahan aksesoris.
+     - `warna` (string): Warna aksesoris.
+   - **Method**:
+     - `display()`: Override method `display()` dari `PetShop` untuk menampilkan informasi tambahan.
+
+3. **Class `Baju` (Turunan dari `Aksesoris`)**:
+   - **Atribut Tambahan**:
+     - `untuk` (string): Untuk hewan apa baju tersebut.
+     - `size` (string): Ukuran baju.
+     - `merk` (string): Merk baju.
+   - **Method**:
+     - `display()`: Override method `display()` dari `Aksesoris` untuk menampilkan informasi lengkap.
+
+---
+
+### **Relasi Antar Class**
+- `PetShop` adalah parent class.
+- `Aksesoris` adalah child class dari `PetShop`.
+- `Baju` adalah child class dari `Aksesoris`.
+
+```plaintext
+PetShop
+   |
+Aksesoris
+   |
+  Baju
+```
+
+---
+
+## **Alur Program**
+
+### **1. Inisialisasi Data Awal**
+- Program membuat 5 objek awal dari class `Baju` dan menyimpannya dalam sebuah list/array.
+- Contoh data awal:
+  ```plaintext
+  1. Kalung Anjing, 50000, 10, kalung.jpg, Kalung, Plastik, Merah, Anjing, M, PetLover
+  2. Tali Leher, 30000, 15, tali.jpg, Tali, Nilon, Biru, Kucing, S, CatWorld
+  3. Jas Hujan, 100000, 5, jas.jpg, Jas, Plastik, Kuning, Anjing, L, RainPet
+  4. Topi, 25000, 20, topi.jpg, Topi, Kain, Hitam, Kucing, S, CatStyle
+  5. Sepatu, 75000, 8, sepatu.jpg, Sepatu, Karet, Coklat, Anjing, M, DogShoes
+  ```
+
+### **2. Menampilkan Data Awal**
+- Program menampilkan data awal dalam bentuk tabel menggunakan method `display()`.
+- Tabel akan menampilkan semua atribut dari class `Baju`.
+
+### **3. Input Data Baru**
+- Program meminta input dari user untuk menambahkan data baru.
+- Input yang diminta:
+  - `id`, `nama_produk`, `harga_produk`, `stok_produk`, `foto_produk`
+  - `jenis`, `bahan`, `warna`
+  - `untuk`, `size`, `merk`
+
+### **4. Tambahkan Data Baru ke List**
+- Data baru yang diinput oleh user akan dibuat sebagai objek dari class `Baju` dan ditambahkan ke list/array.
+
+### **5. Menampilkan Data Terbaru**
+- Program menampilkan semua data (termasuk data baru) dalam bentuk tabel.
+
+### **6. Program Selesai**
+- Program berakhir setelah menampilkan data terbaru.
+
+---
+
+## **Diagram Alur Program**
+
+Berikut adalah diagram alur program menggunakan sintaks Mermaid:
+
+```mermaid
+flowchart TD
+    A[Start] --> B[Inisialisasi Data Awal]
+    B --> C[Tampilkan Data Awal]
+    C --> D{Ada Input Baru?}
+    D -- Ya --> E[Input Data Baru]
+    E --> F[Tambahkan Data ke List]
+    F --> G[Tampilkan Data Terbaru]
+    D -- Tidak --> H[End]
+    G --> H
+```
+
+---
+
+## **Contoh Output Program**
+
+### **Tabel Data Awal**
+| ID  | Nama Produk   | Harga  | Stok | Foto Produk | Jenis  | Bahan  | Warna  | Untuk   | Size | Merk      |
+|-----|---------------|--------|------|-------------|--------|--------|--------|---------|------|-----------|
+| 1   | Kalung Anjing | 50000  | 10   | kalung.jpg  | Kalung | Plastik| Merah  | Anjing  | M    | PetLover  |
+| 2   | Tali Leher    | 30000  | 15   | tali.jpg    | Tali   | Nilon  | Biru   | Kucing  | S    | CatWorld  |
+| 3   | Jas Hujan     | 100000 | 5    | jas.jpg     | Jas    | Plastik| Kuning | Anjing  | L    | RainPet   |
+| 4   | Topi          | 25000  | 20   | topi.jpg    | Topi   | Kain   | Hitam  | Kucing  | S    | CatStyle  |
+| 5   | Sepatu        | 75000  | 8    | sepatu.jpg  | Sepatu | Karet  | Coklat | Anjing  | M    | DogShoes  |
+
+### **Setelah Input Data Baru**
+| ID  | Nama Produk   | Harga  | Stok | Foto Produk | Jenis  | Bahan  | Warna  | Untuk   | Size | Merk      |
+|-----|---------------|--------|------|-------------|--------|--------|--------|---------|------|-----------|
+| 1   | Kalung Anjing | 50000  | 10   | kalung.jpg  | Kalung | Plastik| Merah  | Anjing  | M    | PetLover  |
+| 2   | Tali Leher    | 30000  | 15   | tali.jpg    | Tali   | Nilon  | Biru   | Kucing  | S    | CatWorld  |
+| 3   | Jas Hujan     | 100000 | 5    | jas.jpg     | Jas    | Plastik| Kuning | Anjing  | L    | RainPet   |
+| 4   | Topi          | 25000  | 20   | topi.jpg    | Topi   | Kain   | Hitam  | Kucing  | S    | CatStyle  |
+| 5   | Sepatu        | 75000  | 8    | sepatu.jpg  | Sepatu | Karet  | Coklat | Anjing  | M    | DogShoes  |
+| 6   | Kerah Anjing  | 45000  | 12   | kerah.jpg   | Kerah  | Kulit  | Hitam  | Anjing  | L    | DogCollar |
+
+---
+
+## **Kesimpulan**
+- **Desain Program**: Program menggunakan konsep OOP dengan multi-level inheritance untuk mengelola data produk di PetShop.
+- **Alur Program**: Program dimulai dengan inisialisasi data awal, menampilkan data, menerima input baru, dan menampilkan data terbaru.
+- **Diagram**: Diagram relasi class dan diagram alur program membantu memvisualisasikan struktur dan alur kerja program.
+
+Dengan desain dan alur ini, program dapat dikembangkan lebih lanjut dengan fitur-fitur tambahan seperti edit data, hapus data, atau pencarian data.

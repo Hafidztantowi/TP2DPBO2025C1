@@ -1,0 +1,13 @@
+
+# Input untuk menambahkan data baru
+6
+Kerah Anjing
+45000
+12
+Kerah
+Kulit
+Hitam
+Anjing
+L
+DogCollar
+
